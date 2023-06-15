@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabbed Webpage</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+header {
+  background-color: #f1f1f1;
+  padding: 20px
+}
+
+.tab-container {
+  width: 600px;
+  margin: 10 auto;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+
+.tab-content.show {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="tab-container">
+    <div class="tab-header">
+      <button class="tab-button" onclick="openTab(event, 'tab1')"> Blogs </button>
+	<button class="tab-button" onclick="openTab(event, 'tab2')"> News </button>
+      <button class="tab-button" onclick="openTab(event, 'tab3')"> Events </button>
+      <button class="tab-button" onclick="openTab(event, 'tab4')"> Jobs </button>
+    </div>
+</header>
+<marquee color:red;>* click on tabs to  go through another tabs* </marquee>
+    <div id="tab1" class="tab-content">
+        <section id="Blog">
+    <h2>Blogs</h2>
+    <div class="blog-segment">
+     <ul>
+
+       <li> <a href="#blog1">Sub-segment 1</a></li>
+      <li>  <a href="#blog2">Sub-segment 2</a></li>
+      <li>  <a href="#blog3">Sub-segment 3</a></li>
+      
+       <li> <a href="#blog4">Sub-segment 4</a></li>
+       <li> <a href="#blog5">Sub-segment 5</a></li>
+       <li> <a href="#blog6">Sub-segment 6</a></li>
+      
+      <li>  <a href="#blog7">Sub-segment 7</a></li>
+      <li>  <a href="#blog8">Sub-segment 8</a></li>
+       <li> <a href="#blog9">Sub-segment 9</a></li></ul>
+
+      </div>
+    
+    </section>
+
+    </div>
+<div id="tab2" class="tab-content">
+   <section id="News">
+    <h2>News Feed</h2>
+    <div class="blog-segment">
+     <ul>
+
+       <li> <a href="#blog1">News-segment 1</a></li>
+      <li>  <a href="#blog2">News-segment 2</a></li>
+      <li>  <a href="#blog3">News-segment 3</a></li>
+      
+       <li> <a href="#blog4">News-segment 4</a></li>
+       <li> <a href="#blog5">News-segment 5</a></li>
+       <li> <a href="#blog6">News-segment 6</a></li>
+      
+      <li>  <a href="#blog7">News-segment 7</a></li>
+      <li>  <a href="#blog8">News-segment 8</a></li>
+       <li> <a href="#blog9">News-segment 9</a></li></ul>
+
+      </div>
+    
+  </section>
+
+    </div>
+
+    <div id="tab3" class="tab-content">
+    <section id="Events">
+    <h2>Upcoming Events</h2>
+    <div class="blog-segment">
+     <ul>
+
+     
+       <li> <a href="#blog1">Event 1</a></li>
+       <li> <a href="#blog2">Event 2</a></li>
+       <li> <a href="#blog3">Event 3</a></li>
+      
+        <li><a href="#blog4">Event 4</a></li>
+        <li><a href="#blog5">Event 5</a></li>
+       <li> <a href="#blog6">Event 6</a></li>
+      
+        <li><a href="#blog7">Event 7</a></li>
+       <li> <a href="#blog8">Event 8</a></li>
+       <li> <a href="#blog9">Event 9</a></li>
+     </ul>
+      </div>
+    
+  </section>
+
+    </div>
+    <div id="tab4" class="tab-content">
+    <section id="Jobs">
+    <h2>Jobs</h2>
+    <div class="blog-segment">
+     <ul>
+     <li>   <a href="#blog1">Job 1</a></li>
+       <li> <a href="#blog2">Job 2</a></li>
+      <li>  <a href="#blog3">Job 3</a></li>
+      
+      <li>  <a href="#blog4">Job 4</a></li>
+      <li>  <a href="#blog5">Job 5</a></li>
+      <li>  <a href="#blog6">Job 6</a></li>
+      
+       <li> <a href="#blog7">Job 7</a></li>
+       <li> <a href="#blog8">Job 8</a></li>
+      <li>  <a href="#blog9">Job 9</a></li></ul>
+      </div>
+    
+  </section>
+
+    </div>
+  </div>
+ <footer>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script >
+// Function to open the selected tab
+function openTab(event, tabId) {
+  // Get all tab content elements
+  var tabContents = document.getElementsByClassName("tab-content");
+  
+  // Hide all tab content elements
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].style.display = "none";
+  }
+  
+  // Get all tab button elements
+  var tabButtons = document.getElementsByClassName("tab-button");
+  
+  // Remove the "active" class from all tab button elements
+  for (var i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+  }
+  
+  // Show the selected tab content and set the corresponding tab button as active
+  document.getElementById(tabId).style.display = "block";
+  event.currentTarget.className += " active";
+}
+
+// Set the first tab as active by default
+document.getElementsByClassName("tab-button")[0].click();
+</script>
+</body>
+</html>
